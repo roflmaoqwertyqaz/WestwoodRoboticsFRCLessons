@@ -20,13 +20,14 @@ public class PControllerCommand extends CommandBase {
    */
   public PControllerCommand(ExampleMotor subsystem) {
     // Fill in constructor.
-    // m_motor needs to be defined, m_timer needs to be defined, and the subsystem requirements need to be set using addRequirements.
+    // The subsystem requirements need to be set using addRequirements.
+    m_motor = subsystem;
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() { 
-    // Initialize timer
+    // enable closed loop control
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -38,7 +39,8 @@ public class PControllerCommand extends CommandBase {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    // Set subsystem to stop motor and disable closed loop control
+    m_motor.enableClosedLoopControl(false);
+    m_motor.setMotorSpeed(0);
   }
 
   // Returns true when the command should end.

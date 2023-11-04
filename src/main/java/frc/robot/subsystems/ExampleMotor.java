@@ -21,7 +21,11 @@ public class ExampleMotor extends SubsystemBase {
     motor = new CANSparkMax(Constants.CanConstants.kMotorId, MotorType.kBrushless);
 
     //Activity 3 constructors
-    p_cont_motor = new PIDController(Constants.ControllerConstants.kPMotor, 0, 0);
+    p_cont_motor = new PIDController(
+      Constants.ControllerConstants.kPMotor,
+      Constants.ControllerConstants.kIMotor,
+      0
+    );
     closed_loop_control = false;
   }
 
@@ -41,6 +45,24 @@ public class ExampleMotor extends SubsystemBase {
   }
 
   /**
+   * Gets motor encoder position.
+   *
+   * @return The measured position from the encoder
+   */
+  public double getEncoderPosition() {
+    return motor.getEncoder().getPosition();
+  }
+
+  /**
+   * Gets motor encoder velocity.
+   *
+   * @return The measured velocity from the encoder
+   */
+  public double getEncoderVelocity() {
+    return motor.getEncoder().getVelocity();
+  }
+
+  /**
    * Sets if motor should be controlled by closed loop control.
    *
    * @param enabled True if the motor should be controlled by P controller, False if no closed loop control
@@ -55,7 +77,7 @@ public class ExampleMotor extends SubsystemBase {
    * @param velocity The target velocity of the motor, in RPM
    */
   public void setClosedLoopMotorSpeed(double velocity) {
-    // Fill in for activity 3
+    // Set closed loop motor speed (Activity 3)
   }
 
   @Override

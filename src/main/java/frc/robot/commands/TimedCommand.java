@@ -21,13 +21,16 @@ public class TimedCommand extends CommandBase {
    */
   public TimedCommand(ExampleMotor subsystem) {
     // Fill in constructor.
-    // m_motor needs to be defined, m_timer needs to be defined, and the subsystem requirements need to be set using addRequirements.
+    // m_motor needs to be defined
+    // m_timer needs to be defined
+    // the subsystem requirements need to be set using addRequirements.
+
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() { 
-    // Initialize timer
+    // reset and start timer, alternatively use the method restart()
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -45,7 +48,7 @@ public class TimedCommand extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    // Change to check timer and see if enough time has elapsed
+    // Change to check timer and see if enough time has elapsed (3 seconds)
     return false;
   }
 }

@@ -18,6 +18,10 @@ public final class Constants {
   }
 
   public static final class CanConstants {
-    public static final int kMotorId = 10;
+    public static final int kMotorId = 11;
+  }
+
+  public static final class ControllerConstants {
+    public static final double kPMotor = 1.0;
   }
 }

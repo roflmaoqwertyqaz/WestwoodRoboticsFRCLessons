@@ -6,8 +6,11 @@ package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.JoystickMotorCommand;
+import frc.robot.commands.TimedCommand;
 import frc.robot.subsystems.ExampleMotor;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -35,5 +38,8 @@ public class RobotContainer {
   private void configureBindings() {
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
     m_motor_subsys.setDefaultCommand(new JoystickMotorCommand(m_motor_subsys, m_driverController));
+    // Create trigger from XboxController class that calls TimedCommand. (Activity 1)
+
+    // Create trigger from XboxController class that calls EncoderDistanceCommand. (Activity 2)
   }
 }

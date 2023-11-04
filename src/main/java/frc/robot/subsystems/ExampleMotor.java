@@ -7,13 +7,22 @@ package frc.robot.subsystems;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
+import edu.wpi.first.math.controller.PIDController;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
 public class ExampleMotor extends SubsystemBase {
   CANSparkMax motor;
+  PIDController p_cont_motor;
+  boolean closed_loop_control;
+
   public ExampleMotor() {
     motor = new CANSparkMax(Constants.CanConstants.kMotorId, MotorType.kBrushless);
+
+    //Activity 3 constructors
+    p_cont_motor = new PIDController(Constants.ControllerConstants.kPMotor, 0, 0);
+    closed_loop_control = false;
   }
 
   /**
@@ -31,11 +40,31 @@ public class ExampleMotor extends SubsystemBase {
     motor.set(speed);
   }
 
+  /**
+   * Sets if motor should be controlled by closed loop control.
+   *
+   * @param enabled True if the motor should be controlled by P controller, False if no closed loop control
+   */
+  public void enableClosedLoopControl(boolean enabled) {
+    closed_loop_control = enabled;
+  }
+
+  /**
+   * Sets the closed loop motor setpoint
+   *
+   * @param velocity The target velocity of the motor, in RPM
+   */
+  public void setClosedLoopMotorSpeed(double velocity) {
+    // Fill in for activity 3
+  }
+
   @Override
   public void periodic() {
-    // This method will be called once per scheduler run
+    // Add SmartDashboard command to display encoder value. (Activity 1)
 
-    // No periodic tasks for this subsystem
+    // Uncomment and set closed loop command (Activity 3)
+    // if(closed_loop_control) {
+    // }
   }
 
   @Override

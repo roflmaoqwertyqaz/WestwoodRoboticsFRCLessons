@@ -22,6 +22,7 @@ public final class Constants {
   }
 
   public static final class ControllerConstants {
-    public static final double kPMotor = 1.0;
+    public static final double kPMotor = 0.15;
+    public static final double kIMotor = 0.3;
   }
 }

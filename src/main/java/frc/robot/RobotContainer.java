@@ -6,6 +6,7 @@ package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.JoystickMotorCommand;
+import frc.robot.commands.PControllerCommand;
 import frc.robot.commands.TimedCommand;
 import frc.robot.subsystems.ExampleMotor;
 import edu.wpi.first.wpilibj.XboxController;
@@ -41,5 +42,8 @@ public class RobotContainer {
     // Create trigger from XboxController class that calls TimedCommand. (Activity 1)
 
     // Create trigger from XboxController class that calls EncoderDistanceCommand. (Activity 2)
+
+    // Create trigger from XboxController class that calls PControllerCommand. (Activity 3)
+
   }
 }

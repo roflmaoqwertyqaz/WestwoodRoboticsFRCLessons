@@ -34,7 +34,9 @@ public class JoystickMotorCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    // Implement joystick to motor logic here
+    //getLeftY has units from -1 to 1, same as motor output units.
+    double stick_input = m_controller.getLeftY();
+    m_motor.setMotorSpeed(stick_input);
   }
 
   // Called once the command ends or is interrupted.

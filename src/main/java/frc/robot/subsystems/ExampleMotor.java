@@ -22,7 +22,13 @@ public class ExampleMotor extends SubsystemBase {
    * @param speed The motor speed, -1 for full reverse, 1 for full forward
    */
   public void setMotorSpeed(double speed) {
-    // Implement motor logic here
+    if (speed < -1) {
+      speed = -1;
+    }
+    else if (speed > 1) {
+      speed = 1;
+    }
+    motor.set(speed);
   }
 
   @Override

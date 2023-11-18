@@ -15,6 +15,7 @@ public class ExampleMotor extends SubsystemBase {
   public ExampleMotor() {
     motor = new CANSparkMax(Constants.CanConstants.kMotorId, MotorType.kBrushless);
   }
+  // random comment by William to test git
 
   /**
    * Sets motor to specific speed.
